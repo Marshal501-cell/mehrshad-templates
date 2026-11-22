@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}ثبت‌نام | رایان سرویس{% endblock %}
+
+{% block content %}
+<div class="auth-wrap">
+    <mdui-card variant="elevated" class="form-card">
+        <h1 class="form-title">ایجاد حساب جدید</h1>
+        {% if error %}
+        <div class="error-message">{{ error }}</div>
+        {% endif %}
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            <mdui-text-field label="نام کاربری" name="username" variant="outlined" class="full-width-field" clearable required></mdui-text-field>
+            <mdui-text-field label="رمز عبور" name="password1" type="password" variant="outlined" class="full-width-field" toggle-password required></mdui-text-field>
+            <mdui-text-field label="تکرار رمز عبور" name="password2" type="password" variant="outlined" class="full-width-field" toggle-password required></mdui-text-field>
+            <mdui-button variant="filled" class="full-width-btn" type="submit">ثبت‌نام</mdui-button>
+        </form>
+        <p class="form-footer">حساب دارید؟ <a href="{% url 'login' %}">وارد شوید</a></p>
+    </mdui-card>
+</div>
+{% endblock %}

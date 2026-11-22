@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}خانه | رایان سرویس{% endblock %}
+
+{% block content %}
+<mdui-card variant="elevated" class="hero-card">
+    <h1>رایان سرویس</h1>
+    <p>تعمیر تخصصی کامپیوتر و لپ‌تاپ، نصب نرم‌افزار و راه‌اندازی شبکه؛ سریع، شفاف و با ضمانت.</p>
+    <div class="hero-actions">
+        <mdui-button variant="filled" href="{% url 'contact' %}">تماس با ما</mdui-button>
+        <mdui-button variant="outlined" href="{% url 'about' %}">درباره ما</mdui-button>
+    </div>
+</mdui-card>
+<div class="card-grid">
+    <mdui-card variant="elevated" class="info-card">
+        <h2>تماس با ما</h2>
+        <p>اطلاعات تماس و فرم ارسال پیام.</p>
+        <mdui-button variant="text" href="{% url 'contact' %}">رفتن به صفحه تماس</mdui-button>
+    </mdui-card>
+    <mdui-card variant="elevated" class="info-card">
+        <h2>ثبت‌نام</h2>
+        <p>حساب کاربری بسازید تا درخواست‌هایتان را پیگیری کنید.</p>
+        <mdui-button variant="text" href="{% url 'register' %}">رفتن به صفحه ثبت‌نام</mdui-button>
+    </mdui-card>
+    <mdui-card variant="elevated" class="info-card">
+        <h2>ورود</h2>
+        <p>اگر حساب دارید، وارد شوید.</p>
+        <mdui-button variant="text" href="{% url 'login' %}">رفتن به صفحه ورود</mdui-button>
+    </mdui-card>
+</div>
+{% endblock %}

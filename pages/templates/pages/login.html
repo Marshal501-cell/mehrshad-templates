@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}ورود | رایان سرویس{% endblock %}
+
+{% block content %}
+<div class="auth-wrap">
+    <mdui-card variant="elevated" class="form-card">
+        <h1 class="form-title">خوش آمدید</h1>
+        {% if error %}
+        <div class="error-message">{{ error }}</div>
+        {% endif %}
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <mdui-text-field label="نام کاربری" name="username" variant="outlined" class="full-width-field" clearable required></mdui-text-field>
+            <mdui-text-field label="رمز عبور" name="password" type="password" variant="outlined" class="full-width-field" toggle-password required></mdui-text-field>
+            <mdui-button variant="filled" class="full-width-btn" type="submit">ورود</mdui-button>
+        </form>
+        <p class="form-footer">حساب ندارید؟ <a href="{% url 'register' %}">ثبت‌نام کنید</a></p>
+    </mdui-card>
+</div>
+{% endblock %}

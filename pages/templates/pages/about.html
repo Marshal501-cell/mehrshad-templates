@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}درباره ما | رایان سرویس{% endblock %}
+
+{% block content %}
+<h1 class="page-title">درباره ما</h1>
+<mdui-card variant="elevated" class="section-card">
+    <h2>ما کی هستیم؟</h2>
+    <p>رایان سرویس یک مرکز تخصصی تعمیر و خدمات کامپیوتر در اصفهان است. ما از سال ۱۳۹۸ در کنار مشتری‌هایمان هستیم و هر روز دستگاه‌هایی را که کارشان متوقف شده، دوباره به چرخه زندگی برمی‌گردانیم؛ از یک لپ‌تاپ خانگی گرفته تا سیستم‌های اداری یک شرکت.</p>
+    <p>ما باور داریم تعمیر خوب یعنی تشخیص درست. به همین دلیل قبل از هر کاری، دستگاه را کامل بررسی می‌کنیم، مشکل را شفاف توضیح می‌دهیم و فقط بعد از تایید شما، تعمیر را شروع می‌کنیم.</p>
+</mdui-card>
+<h2 class="section-title">خدمات ما</h2>
+<div class="card-grid">
+    <mdui-card variant="elevated" class="info-card">
+        <h3>تعمیر سخت‌افزار</h3>
+        <p>عیب‌یابی و تعویض قطعات لپ‌تاپ و کامپیوتر رومیزی، تعمیر مادربرد، ارتقای رم و هارد، و رفع مشکلات روشن نشدن و داغ کردن دستگاه.</p>
+    </mdui-card>
+    <mdui-card variant="elevated" class="info-card">
+        <h3>نرم‌افزار و ویندوز</h3>
+        <p>نصب و راه‌اندازی ویندوز و نرم‌افزارهای کاربردی، حذف ویروس و بدافزار، بازیابی اطلاعات و بهینه‌سازی سرعت سیستم.</p>
+    </mdui-card>
+    <mdui-card variant="elevated" class="info-card">
+        <h3>شبکه و پشتیبانی</h3>
+        <p>راه‌اندازی شبکه‌های خانگی و اداری، تنظیم مودم و روتر، و پشتیبانی دوره‌ای برای کسب‌وکارهایی که نمی‌خواهند سیستمشان حتی یک روز بخوابد.</p>
+    </mdui-card>
+</div>
+<mdui-card variant="elevated" class="section-card">
+    <h2>چرا رایان سرویس؟</h2>
+    <ul class="check-list">
+        <li>ضمانت ۷ روزه همه تعمیرها</li>
+        <li>قیمت شفاف؛ قبل از شروع کار، هزینه دقیق را می‌دانید</li>
+        <li>تحویل سریع؛ بیشتر تعمیرها در ۲۴ تا ۴۸ ساعت</li>
+        <li>پشتیبانی بعد از تحویل؛ اگر مشکل برگشت، بدون هزینه بررسی می‌شود</li>
+    </ul>
+</mdui-card>
+<div class="stats-row">
+    <div class="stat"><strong>۵۰۰+</strong><span>دستگاه تعمیرشده</span></div>
+    <div class="stat"><strong>۹۸٪</strong><span>رضایت مشتری</span></div>
+    <div class="stat"><strong>۷ روز</strong><span>ضمانت تعمیر</span></div>
+</div>
+<div class="cta-row">
+    <mdui-button variant="filled" href="{% url 'contact' %}">با ما در تماس باشید</mdui-button>
+</div>
+{% endblock %}

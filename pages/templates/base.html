@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}رایان سرویس{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/mdui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <mdui-top-app-bar>
+        <div class="top-bar">
+            <a class="brand" href="{% url 'home' %}">رایان سرویس</a>
+            <nav class="top-nav">
+                <mdui-button variant="text" href="{% url 'home' %}">خانه</mdui-button>
+                <mdui-button variant="text" href="{% url 'about' %}">درباره ما</mdui-button>
+                <mdui-button variant="text" href="{% url 'contact' %}">تماس با ما</mdui-button>
+                {% if user.is_authenticated %}
+                <mdui-button variant="text" disabled>{{ user.username }}</mdui-button>
+                {% else %}
+                <mdui-button variant="text" href="{% url 'login' %}">ورود</mdui-button>
+                <mdui-button variant="filled" href="{% url 'register' %}">ثبت‌نام</mdui-button>
+                {% endif %}
+            </nav>
+        </div>
+    </mdui-top-app-bar>
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+    <script src="{% static 'js/mdui.global.js' %}"></script>
+</body>
+</html>

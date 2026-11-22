@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}تماس با ما | رایان سرویس{% endblock %}
+
+{% block content %}
+<h1 class="page-title">تماس با ما</h1>
+<div class="contact-layout">
+    <mdui-card variant="elevated" class="info-card">
+        <h2>اطلاعات تماس</h2>
+        <p><strong>آدرس:</strong> اصفهان، خیابان مثال، پلاک ۱۲۳</p>
+        <p><strong>تلفن:</strong> <span dir="ltr">09123456789</span></p>
+        <p><strong>ایمیل:</strong> info@example.com</p>
+        <p><strong>ساعت کاری:</strong> شنبه تا پنجشنبه، ۹ تا ۱۸</p>
+    </mdui-card>
+    <mdui-card variant="elevated" class="form-card">
+        <h2>ارسال پیام</h2>
+        {% if sent %}
+        <div class="success-message">پیام شما با موفقیت ثبت شد.</div>
+        {% endif %}
+        {% if error %}
+        <div class="error-message">{{ error }}</div>
+        {% endif %}
+        <form method="post" action="{% url 'contact' %}">
+            {% csrf_token %}
+            <mdui-text-field label="نام" name="name" value="{{ name }}" variant="outlined" class="full-width-field" clearable required></mdui-text-field>
+            <mdui-text-field label="ایمیل" name="email" type="email" value="{{ email }}" variant="outlined" class="full-width-field" clearable required></mdui-text-field>
+            <mdui-text-field label="متن پیام" name="message" value="{{ message }}" rows="3" autosize variant="outlined" class="full-width-field" clearable required></mdui-text-field>
+            <mdui-button variant="filled" class="full-width-btn" type="submit">ارسال پیام</mdui-button>
+        </form>
+    </mdui-card>
+</div>
+{% endblock %}
